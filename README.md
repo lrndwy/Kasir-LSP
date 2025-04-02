@@ -51,7 +51,6 @@ Sistem manajemen restoran berbasis web yang memungkinkan pengelolaan pesanan, pe
 - MySQL Database
 - Bootstrap CSS
 - JavaScript
-- SweetAlert2
 
 ## 💻 Persyaratan Sistem
 - PHP 8.2.4 atau lebih tinggi
@@ -63,7 +62,6 @@ Sistem manajemen restoran berbasis web yang memungkinkan pengelolaan pesanan, pe
 2. Jalankan XAMPP Control Panel dan aktifkan Apache & MySQL
 3. Clone repository ini ke folder `C:/xampp/htdocs/kasir_restoran`
 4. Import file database `kasir.sql` ke MySQL melalui phpMyAdmin (http://localhost/phpmyadmin)
-5. Sesuaikan konfigurasi database di `config/database.php`
-6. Akses aplikasi melalui browser di http://localhost/kasir_restoran
-
-## 👥 Akun Default
+5. Salin file `.env.example` menjadi `.env`
+6. Sesuaikan konfigurasi database di file `.env`
+7. Akses aplikasi melalui browser di http://localhost/kasir_restoran
