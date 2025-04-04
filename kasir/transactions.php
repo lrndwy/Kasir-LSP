@@ -163,7 +163,7 @@ $summary = [
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                <button type="button" class="btn btn-primary" onclick="printReceipt()">Cetak Struk</button>
+                <button type="button" class="btn btn-primary" onclick="printReceipt(currentTransactionId)">Cetak Struk</button>
             </div>
         </div>
     </div>

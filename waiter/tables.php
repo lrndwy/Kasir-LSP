@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once '../includes/alert.php';
 require_once '../config/database.php';
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'waiter') {
     header("Location: /kasir_restoran/");
@@ -20,6 +21,7 @@ $menu_items = $stmt->fetchAll();
     <?php include '../includes/sidebar.php'; ?>
     
     <div class="container-fluid py-4">
+        <div id="alertPlaceholder" style="position: fixed; top: 20px; right: 20px; z-index: 9999; min-width: 300px; max-width: 90%; width: fit-content;"></div>
         <h2>Status Meja</h2>
         
         <div class="row mt-4">
@@ -123,8 +125,13 @@ function submitOrder() {
 
     // Validasi pesanan
     let hasItems = false;
-    formData.getAll('items[]').forEach(qty => {
-        if (parseInt(qty) > 0) hasItems = true;
+    const items = formData.getAll('items[]');
+    
+    // Periksa setiap input menu
+    document.querySelectorAll('input[type="number"]').forEach(input => {
+        if (parseInt(input.value) > 0) {
+            hasItems = true;
+        }
     });
 
     if (!hasItems) {
